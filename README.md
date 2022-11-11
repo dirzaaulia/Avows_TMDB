@@ -1,7 +1,7 @@
-### Avows_TMDB
+# Avows_TMDB
 
 ## Tech Stack
-# MVVM | Retrofit with Moshi | Material 3 with Material You | Coroutine + Flow | Jetpack Navigation | Dependency Injection with Hilt + Hilt Navigation | Chucker | Timber
+### MVVM | Retrofit with Moshi | Material 3 with Material You | Coroutine + Flow | Jetpack Navigation | Dependency Injection with Hilt + Hilt Navigation | Chucker | Timber
 
 
 ![29b2bcb1-d8eb-4831-8c1f-a9cfbe49324d](https://user-images.githubusercontent.com/32137098/201358524-ec674268-566e-4f09-baf6-ad31e8690ceb.png)
