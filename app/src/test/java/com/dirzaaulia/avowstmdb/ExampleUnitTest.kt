@@ -1,4 +1,4 @@
-package com.dirzaaulia.baseproject
+package com.dirzaaulia.avowstmdb
 
 import org.junit.Test
 

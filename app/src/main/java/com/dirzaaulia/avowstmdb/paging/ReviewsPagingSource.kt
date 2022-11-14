@@ -1,0 +1,36 @@
+package com.dirzaaulia.avowstmdb.paging
+
+import androidx.paging.PagingSource
+import androidx.paging.PagingState
+import com.dirzaaulia.avowstmdb.data.model.Review
+import com.dirzaaulia.avowstmdb.repository.Repository
+import com.dirzaaulia.avowstmdb.util.Constant
+import com.dirzaaulia.avowstmdb.util.pagingSucceeded
+
+class ReviewsPagingSource(
+    private val repository: Repository,
+    private val movieId: String
+): PagingSource<Int, Review>() {
+
+    override fun getRefreshKey(state: PagingState<Int, Review>): Int? {
+        return state.anchorPosition?.let { anchorPosition ->
+            state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
+                ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)
+        }
+    }
+
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Review> {
+        val page = params.key ?: Constant.TMDB_STARTING_PAGE_INDEX
+
+        return repository.getMovieReviews(
+            movieId = movieId,
+            page = page,
+        ).pagingSucceeded { response ->
+            LoadResult.Page(
+                data = response.results,
+                prevKey = if (page == Constant.TMDB_STARTING_PAGE_INDEX) null else page - 1,
+                nextKey = if (page < response.totalPages) page + 1 else null
+            )
+        }
+    }
+}

@@ -4,9 +4,11 @@ object Version {
     const val hiltGradle = "2.42"
     const val kotlin = "1.7.20"
     const val toolsBuildGradle = "7.2.2"
+    const val safeArgsPlugin = "2.5.3"
 
 
     //Dependencies Level
+    const val appCompat = "1.5.1"
     const val chucker = "3.5.2"
     const val coil = "2.2.2"
     const val coreKtx = "1.9.0"
@@ -20,4 +22,6 @@ object Version {
     const val okHttpLogging = "4.10.0"
     const val paging3 = "3.1.1"
     const val retrofit = "2.9.0"
+    const val shimmer = "0.5.0"
+    const val swipeRefreshLayout = "1.1.0"
 }

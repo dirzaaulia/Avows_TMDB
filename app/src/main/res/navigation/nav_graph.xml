@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/genresFragment">
+
+    <fragment
+        android:id="@+id/genresFragment"
+        android:name="com.dirzaaulia.avowstmdb.screens.home.HomeFragment"
+        android:label="fragment_genres"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_genresFragment_to_detailFragment"
+            app:destination="@id/details_nav_graph" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/details_nav_graph"
+        app:startDestination="@id/detailFragment">
+
+        <fragment
+            android:id="@+id/detailFragment"
+            android:name="com.dirzaaulia.avowstmdb.screens.detail.DetailFragment"
+            android:label="DetailFragment"
+            tools:layout="@layout/fragment_detail"/>
+
+        <fragment
+            android:id="@+id/reviewsFragment"
+            android:name="com.dirzaaulia.avowstmdb.screens.detail.ReviewsFragment"
+            android:label="ReviewsFragment"
+            tools:layout="@layout/fragment_reviews"/>
+
+        <fragment
+            android:id="@+id/trailerFragment"
+            android:name="com.dirzaaulia.avowstmdb.screens.detail.TrailerFragment"
+            android:label="TraielrFragment"
+            tools:layout="@layout/fragment_trailer"/>
+
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="poster"
+            app:argType="string" />
+        <argument
+            android:name="overview"
+            app:argType="string" />
+        <argument
+            android:name="movieId"
+            app:argType="string" />
+
+    </navigation>
+
+</navigation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewAnimator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+  <com.facebook.shimmer.ShimmerFrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/spacing_220"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+  </com.facebook.shimmer.ShimmerFrameLayout>
+
+  <com.google.android.material.card.MaterialCardView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <include
+        android:id="@+id/view_common_error"
+        layout="@layout/view_common_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+  </com.google.android.material.card.MaterialCardView>
+
+</ViewAnimator>

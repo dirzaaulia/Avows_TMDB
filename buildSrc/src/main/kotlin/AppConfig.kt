@@ -1,6 +1,6 @@
 object AppConfig {
-    const val namespace = "com.dirzaaulia.baseproject"
-    const val applicationId = "com.dirzaaulia.baseproject"
+    const val namespace = "com.dirzaaulia.avowstmdb"
+    const val applicationId = "com.dirzaaulia.avowstmdb"
     const val compileSdk = 33
     const val minSdk = 26
     const val targetSdk = 33

@@ -2,10 +2,14 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 
 object Dependencies  {
     object AndroidX {
+        private const val appCompat = "androidx.appcompat:appcompat:${Version.appCompat}"
         private const val coreKtx = "androidx.core:core-ktx:${Version.coreKtx}"
+        private const val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Version.swipeRefreshLayout}"
 
         val implementation = arrayListOf<String>().apply {
+            add(appCompat)
             add(coreKtx)
+            add(swipeRefreshLayout)
         }
     }
 
@@ -116,6 +120,14 @@ object Dependencies  {
             add(logger)
             add(moshi)
             add(retrofit)
+        }
+    }
+
+    object Shimmer {
+        private const val shimmer = "com.facebook.shimmer:shimmer:${Version.shimmer}"
+
+        val implementation = arrayListOf<String>().apply {
+            add(shimmer)
         }
     }
 }

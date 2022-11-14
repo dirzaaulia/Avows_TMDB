@@ -8,6 +8,15 @@ plugins {
     id("com.google.dagger.hilt.android") version Version.hiltGradle apply false
 }
 
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Version.safeArgsPlugin}")
+    }
+}
+
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
